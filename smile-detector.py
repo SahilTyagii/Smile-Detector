@@ -17,8 +17,8 @@ def detect(gray, frame):
         cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
         region_of_intrest_gray = gray[y:y+h, x:x+w]
         region_of_intrest_color = frame[y:y+h, x:x+w]
-        smiles = smile_cascade.detectMultiScale(region_of_intrest_gray, 2, 22)
-        eyes = eye_cascade.detectMultiScale(region_of_intrest_gray, 1.1, 3)
+        smiles = smile_cascade.detectMultiScale(region_of_intrest_gray, 1.7, 22)
+        eyes = eye_cascade.detectMultiScale(region_of_intrest_gray, 1.1, 22)
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(region_of_intrest_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
         for (sx, sy, sw, sh) in smiles:
